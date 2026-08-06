@@ -17,6 +17,3 @@ def get_posts_service(db: Session, skip: int = 0, limit: int = 100):
 def update_post_service(db: Session, db_post, post_in: schemas.PostUpdate):
     return crud.update_post(db, db_post, post_in)
 
-
-def delete_post_service(db: Session, db_post):
-    return crud.delete_post(db, db_post)

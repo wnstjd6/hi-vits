@@ -31,11 +31,3 @@ def update_post(post_id: int, post_in: schemas.PostUpdate, db: Session = Depends
         raise HTTPException(status_code=404, detail="Post not found")
     return services.update_post_service(db, db_post, post_in)
 
-
-@router.delete("/{post_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_post(post_id: int, db: Session = Depends(get_db)):
-    db_post = services.get_post_service(db, post_id)
-    if not db_post:
-        raise HTTPException(status_code=404, detail="Post not found")
-    services.delete_post_service(db, db_post)
-    return None
