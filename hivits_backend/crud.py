@@ -32,3 +32,4 @@ def update_post(db: Session, db_post: models.Post, post_in: schemas.PostUpdate):
 def delete_post(db: Session, db_post: models.Post):
     db.delete(db_post)
     db.commit()
+

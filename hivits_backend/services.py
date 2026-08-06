@@ -20,3 +20,4 @@ def update_post_service(db: Session, db_post, post_in: schemas.PostUpdate):
 
 def delete_post_service(db: Session, db_post):
     return crud.delete_post(db, db_post)
+

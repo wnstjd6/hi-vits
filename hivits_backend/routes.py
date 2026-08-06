@@ -39,3 +39,4 @@ def delete_post(post_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Post not found")
     services.delete_post_service(db, db_post)
     return None
+
